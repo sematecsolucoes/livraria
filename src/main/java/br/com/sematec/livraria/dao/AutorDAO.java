@@ -23,7 +23,7 @@ public class AutorDAO extends DAO<Autor> {
 	}
 
 	public Autor buscaPorNome(String nome) {
-		int i = 0;
+		Long i = 0L;
 		boolean achou = false;
 		Autor retorno = null;
 		while (!achou && i < LISTA.size()) {
@@ -31,6 +31,7 @@ public class AutorDAO extends DAO<Autor> {
 				achou = true;
 				retorno = LISTA.get(i);
 			}
+			i++;
 		}
 		return retorno;
 	}
@@ -43,12 +44,13 @@ public class AutorDAO extends DAO<Autor> {
 	}
 
 	public List<Autor> listaPorNome(String nome) {
-		int i = 0;
+		Long i = 0L;
 		List<Autor> retorno = new ArrayList<>();
 		while (i < LISTA.size()) {
 			if (StringUtils.containsIgnoreCase(LISTA.get(i).getNome(), nome)) {
 				retorno.add(LISTA.get(i));
 			}
+			i++;
 		}
 		return retorno;
 	}

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Livro extends BaseEntity {
+	private static final long serialVersionUID = 1L;
 	private Long id;
 	private String titulo;
 	private String isbn;
@@ -12,7 +13,7 @@ public class Livro extends BaseEntity {
 	private List<Autor> autores = new ArrayList<Autor>();
 
 	public Livro() {
-		super();
+		this("", "", "", 0d, new ArrayList<Autor>());
 	}
 
 	public Livro(String isbn, String titulo, String dataLancamento, double preco, List<Autor> autores) {

@@ -22,7 +22,7 @@ public abstract class DAO<T extends BaseEntity> {
 		LISTA.put(t.getId(), t);
 	}
 
-	public T buscaPorId(Integer id) {
+	public T buscaPorId(Long id) {
 		return LISTA.get(id);
 	}
 
@@ -33,7 +33,7 @@ public abstract class DAO<T extends BaseEntity> {
 	abstract void geraDados();
 
 	protected void geraIdEAdiciona(T t) {
-		long id = LISTA.size() + 1l;
+		long id = LISTA.size();
 		t.setId(id);
 		LISTA.put(id, t);
 	}
